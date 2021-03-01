@@ -45,4 +45,25 @@ A card sorting task created with JSPsych, based on the Berg's Card Sorting Task 
  <li><strong>key_press:</strong> JS code of key pressed</li>
 </ul>
   
+In the columns start with STAT, basic statistics are calculated:
+<ul>
+ <li><strong>STAT_nr_of_trials:</strong> number of trials (normally 64)</li>
+ <li><strong>STAT_p_of_correct_trials:</strong> percentage of correct trials</li>
+ <li><strong>STAT_nr_of_perseverative_responses:</strong> number of perseverative responses</li>
+ <li><strong>STAT_nr_of_perseverative_errors:</strong> number of perseverative errors</li>
+ <li><strong>STAT_nr_of_non_perseverative_errors:</strong> number of non-perseverative errors</li>
+ <li><strong>STAT_p_perseverative_errors:</strong> percentage of perseverative errors (% of the the total number of trials)</li>
+ <li><strong>STAT_nr_of_total_errors:</strong> total number of errors</li>
+ <li><strong>STAT_p_of_errors:</strong> percentage of errors (% of the total number of trials)</li>
+ <li><strong>STAT_category_achieved:</strong> the number of categories successfully completed (0-6)</li>
+ <li><strong>STAT_p_of_conceptual_level_responses:</strong> the percentage of conceptual level responses (% of the total number of trials)</li>
+ <li><strong>STAT_failure_to_maintain_set:</strong> the number of times five or more consecutive correct responses occur without completing the category (do not reach 10 consecutibe correct)</li>
+ <li><strong>STAT_trials_to_complete_first_category:</strong> the number of trials needed to achieve the first 10 consecutive correct responses/li>
+</ul>
 
+<h1>Setting optins</h1>
+The language of the task can be set in the parameters.js file by modifying the variable "language". Available languages: english (en), hungarian (hu)
+
+<h1>Browser requirements</h1>
+Any browser except Safari and Internet Explorer.
+ 
