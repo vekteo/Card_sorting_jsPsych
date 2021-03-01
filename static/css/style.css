@@ -1,0 +1,37 @@
+body {
+    background: #f6f6f8;
+}
+
+p {
+    font-size: 1.25em;
+}
+
+
+img {
+    width: 15vh;
+}
+
+.choice {
+    position: fixed;
+    left: 50%;
+    bottom: 10vh;
+    transform: translateX(-50%);
+}
+
+
+.topCards {
+     position: relative;
+     bottom: 10vh;
+}
+
+h3 {
+    position: relative;
+    top: -15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3vh;
+}
+
+.feedback {
+    bottom: 15vh;
+}
