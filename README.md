@@ -61,8 +61,8 @@ In the columns start with STAT, basic statistics are calculated:
  <li><strong>STAT_trials_to_complete_first_category:</strong> the number of trials needed to achieve the first 10 consecutive correct responses/li>
 </ul>
 
-<h1>Setting optins</h1>
-The language of the task can be set in the parameters.js file by modifying the variable "language". Available languages: english (en), hungarian (hu)
+<h1>Setting options</h1>
+The language of the task can be set in the parameters.js file by modifying the variable "language".<br>Available languages: english (en), hungarian (hu)
 
 <h1>Browser requirements</h1>
 Any browser except Safari and Internet Explorer.
