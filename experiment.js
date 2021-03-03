@@ -144,7 +144,6 @@ function addIfNoEnd(targetCard){
     }
 }
 
-
 function CheckRestricted(src, restricted) {
     return !src.split("").some(ch => restricted.indexOf(ch) == -1);
  }
@@ -166,6 +165,9 @@ timeline.push(endTask, {type: "fullscreen", fullscreen_mode: false})
 jsPsych.init({
 timeline: timeline,
 preload_images: preloadImages(),
+on_close: function() {
+    jsPsych.data.get().localSave('csv','WCST_output_quitted.csv'); 
+},
 on_data_update: function () {
 
     if (jsPsych.data.get().last(1).values()[0].is_trial === true) {
@@ -236,6 +238,4 @@ on_data_update: function () {
     on_finish: function() {       
         jsPsych.data.get().localSave('csv','WCST_output.csv'); 
     },
-
-
 });
