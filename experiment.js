@@ -17,6 +17,7 @@ let counter = 0;
 let targetImages = [];
 let totalErrors = 0;
 let appliedRules = [];
+const subjectId = jsPsych.randomization.randomID(15)
 
 /*************** TIMELINE ELEMENTS ***************/
 
@@ -153,6 +154,7 @@ for (let i = 1; i < 65; i++) {
     timeline.push(addIfNoEnd(targetCard))
 }
 
+jsPsych.data.addProperties({subject: subjectId});
 timeline.push(endTask, {type: "fullscreen", fullscreen_mode: false})
 
 /*************** EXPERIMENT START AND DATA UPDATE ***************/
