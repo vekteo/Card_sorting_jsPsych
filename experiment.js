@@ -29,6 +29,7 @@ const instructions = {
         `<p>${language.instruction.rule}</p><p>${language.instruction2.ruleChange}</p><p>${language.instruction2.ruleChange2}</p><br><img src="static/images/instruction.png" style="width: 500px"/><p>${language.instruction2.clickNext}</p>`,
     ],
     show_clickable_nav: true,
+    data: {test_part: "instruction"},
     button_label_next: language.button.next,
     button_label_previous: language.button.previous
 }
@@ -58,7 +59,7 @@ function addTrials (targetCard) {
         choices: ["static/images/triangle_red_1.png", "static/images/star_green_2.png", "static/images/diamond_yellow_3.png", "static/images/circle_blue_4.png"],
         prompt: "<img class='choice' src='" + `${targetCard.image}` + "' />",
         button_html: '<img class="topCards" src="%choice%" />',
-        data: {is_trial: true, card_number: targetCard.trialNumber, correct: "", image: targetCard.image, color: targetCard.color, shape: targetCard.shape, number: targetCard.number, color_rule: targetCard.colorRule, shape_rule: targetCard.shapeRule, number_rule: targetCard.numberRule, correct_in_row: 0}, applied_rule: "", applied_rule2: "", applied_rule3: "",
+        data: {test_part: "card", is_trial: true, card_number: targetCard.trialNumber, correct: "", image: targetCard.image, color: targetCard.color, shape: targetCard.shape, number: targetCard.number, color_rule: targetCard.colorRule, shape_rule: targetCard.shapeRule, number_rule: targetCard.numberRule, correct_in_row: 0}, applied_rule: "", applied_rule2: "", applied_rule3: "",
         conditional_function: function() {
             return counter == 1;
             },
@@ -120,6 +121,7 @@ function addFeedback () {
         button_html: '<img class="topCards" src="%choice%" />',
         stimulus_duration: 750,
         trial_duration: 750,
+        data: {test_part: "feedback"},
         prompt: function(){
             var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
             if(last_trial_correct){
