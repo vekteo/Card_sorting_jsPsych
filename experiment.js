@@ -39,7 +39,9 @@ const endTask = {
     stimulus: function() {
         return `<h2>${language.end.end}</h2><br><p>${language.end.thankYou}</p>`
         },
-    trial_duration: 3000
+    trial_duration: 3000,
+    data: {test_part: "end"},
+    on_finish: function (trial) { statCalculation(trial) }
 }  
 
 /*************** FUNCTIONS ***************/
@@ -231,26 +233,8 @@ on_data_update: function () {
         }
     },
            
-    on_finish: function() {
-  
-        let trial = jsPsych.data.get();
-        let data = {};
-        data.STAT_nr_of_trials = trial.filter({is_trial: true}).count(),
-        data.STAT_nr_of_correct = trial.filter({is_trial: true, correct: true}).count(),
-        data.STAT_p_of_correct_trials = (trial.filter({is_trial: true, correct: true}).count()/data.STAT_nr_of_trials)*100,
-        data.STAT_nr_of_perseverative_responses = trial.filter({is_trial: true, perseverative_response: true}).count(),
-        data.STAT_nr_of_perseverative_errors = trial.filter({is_trial: true, perseverative_error: true}).count(),
-        data.STAT_nr_of_non_perseverative_errors = trial.filter({is_trial: true, non_perseverative_error: true}).count(),
-        data.STAT_p_perseverative_errors = (data.STAT_nr_of_perseverative_errors/data.STAT_nr_of_trials)*100,
-        data.STAT_nr_of_total_errors = data.STAT_nr_of_perseverative_errors + data.STAT_nr_of_non_perseverative_errors,
-        data.STAT_p_of_errors = (data.STAT_nr_of_total_errors/data.STAT_nr_of_trials)*100,
-        data.STAT_category_achieved = trial.select("category_completed").max(),
-        data.STAT_p_of_conceptual_level_responses = (trial.filter({is_trial: true, conceptual_level_response: true}).count()/data.STAT_nr_of_trials)*100,
-        data.STAT_failure_to_maintain_set = trial.filter({is_trial: true, failure_to_maintain: true}).count(),
-        data.STAT_trials_to_complete_first_category = trial.filter({category_completed: 0}).last(1).values()[0].card_number
-        
-        jsPsych.data.get().push(data);
-        jsPsych.data.get().localSave('csv','wcst_output.csv'); 
+    on_finish: function() {       
+        jsPsych.data.get().localSave('csv','WCST_output.csv'); 
     },
 
 
