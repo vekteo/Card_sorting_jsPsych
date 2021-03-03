@@ -17,6 +17,7 @@ let counter = 0;
 let targetImages = [];
 let totalErrors = 0;
 let appliedRules = [];
+const subjectId = jsPsych.randomization.randomID(15)
 
 /*************** TIMELINE ELEMENTS ***************/
 
@@ -28,6 +29,7 @@ const instructions = {
         `<p>${language.instruction.rule}</p><p>${language.instruction2.ruleChange}</p><p>${language.instruction2.ruleChange2}</p><br><img src="static/images/instruction.png" style="width: 500px"/><p>${language.instruction2.clickNext}</p>`,
     ],
     show_clickable_nav: true,
+    data: {test_part: "instruction"},
     button_label_next: language.button.next,
     button_label_previous: language.button.previous
 }
@@ -37,7 +39,9 @@ const endTask = {
     stimulus: function() {
         return `<h2>${language.end.end}</h2><br><p>${language.end.thankYou}</p>`
         },
-    trial_duration: 3000
+    trial_duration: 3000,
+    data: {test_part: "end"},
+    on_finish: function (trial) { statCalculation(trial) }
 }  
 
 /*************** FUNCTIONS ***************/
@@ -57,7 +61,7 @@ function addTrials (targetCard) {
         choices: ["static/images/triangle_red_1.png", "static/images/star_green_2.png", "static/images/diamond_yellow_3.png", "static/images/circle_blue_4.png"],
         prompt: "<img class='choice' src='" + `${targetCard.image}` + "' />",
         button_html: '<img class="topCards" src="%choice%" />',
-        data: {is_trial: true, card_number: targetCard.trialNumber, correct: "", image: targetCard.image, color: targetCard.color, shape: targetCard.shape, number: targetCard.number, color_rule: targetCard.colorRule, shape_rule: targetCard.shapeRule, number_rule: targetCard.numberRule, correct_in_row: 0}, applied_rule: "", applied_rule2: "", applied_rule3: "",
+        data: {test_part: "card", is_trial: true, card_number: targetCard.trialNumber, correct: "", image: targetCard.image, color: targetCard.color, shape: targetCard.shape, number: targetCard.number, color_rule: targetCard.colorRule, shape_rule: targetCard.shapeRule, number_rule: targetCard.numberRule, correct_in_row: 0}, applied_rule: "", applied_rule2: "", applied_rule3: "",
         conditional_function: function() {
             return counter == 1;
             },
@@ -119,6 +123,7 @@ function addFeedback () {
         button_html: '<img class="topCards" src="%choice%" />',
         stimulus_duration: 750,
         trial_duration: 750,
+        data: {test_part: "feedback"},
         prompt: function(){
             var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
             if(last_trial_correct){
@@ -139,7 +144,6 @@ function addIfNoEnd(targetCard){
     }
 }
 
-
 function CheckRestricted(src, restricted) {
     return !src.split("").some(ch => restricted.indexOf(ch) == -1);
  }
@@ -153,6 +157,7 @@ for (let i = 1; i < 65; i++) {
     timeline.push(addIfNoEnd(targetCard))
 }
 
+jsPsych.data.addProperties({subject: subjectId});
 timeline.push(endTask, {type: "fullscreen", fullscreen_mode: false})
 
 /*************** EXPERIMENT START AND DATA UPDATE ***************/
@@ -160,6 +165,9 @@ timeline.push(endTask, {type: "fullscreen", fullscreen_mode: false})
 jsPsych.init({
 timeline: timeline,
 preload_images: preloadImages(),
+on_close: function() {
+    jsPsych.data.get().localSave('csv','WCST_output_quitted.csv'); 
+},
 on_data_update: function () {
 
     if (jsPsych.data.get().last(1).values()[0].is_trial === true) {
@@ -227,27 +235,7 @@ on_data_update: function () {
         }
     },
            
-    on_finish: function() {
-  
-        let trial = jsPsych.data.get();
-        let data = {};
-        data.STAT_nr_of_trials = trial.filter({is_trial: true}).count(),
-        data.STAT_nr_of_correct = trial.filter({is_trial: true, correct: true}).count(),
-        data.STAT_p_of_correct_trials = (trial.filter({is_trial: true, correct: true}).count()/data.STAT_nr_of_trials)*100,
-        data.STAT_nr_of_perseverative_responses = trial.filter({is_trial: true, perseverative_response: true}).count(),
-        data.STAT_nr_of_perseverative_errors = trial.filter({is_trial: true, perseverative_error: true}).count(),
-        data.STAT_nr_of_non_perseverative_errors = trial.filter({is_trial: true, non_perseverative_error: true}).count(),
-        data.STAT_p_perseverative_errors = (data.STAT_nr_of_perseverative_errors/data.STAT_nr_of_trials)*100,
-        data.STAT_nr_of_total_errors = data.STAT_nr_of_perseverative_errors + data.STAT_nr_of_non_perseverative_errors,
-        data.STAT_p_of_errors = (data.STAT_nr_of_total_errors/data.STAT_nr_of_trials)*100,
-        data.STAT_category_achieved = trial.select("category_completed").max(),
-        data.STAT_p_of_conceptual_level_responses = (trial.filter({is_trial: true, conceptual_level_response: true}).count()/data.STAT_nr_of_trials)*100,
-        data.STAT_failure_to_maintain_set = trial.filter({is_trial: true, failure_to_maintain: true}).count(),
-        data.STAT_trials_to_complete_first_category = trial.filter({category_completed: 0}).last(1).values()[0].card_number
-        
-        jsPsych.data.get().push(data);
-        jsPsych.data.get().localSave('csv','wcst_output.csv'); 
+    on_finish: function() {       
+        jsPsych.data.get().localSave('csv','WCST_output.csv'); 
     },
-
-
 });
