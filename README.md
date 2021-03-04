@@ -64,7 +64,7 @@ In the columns start with STAT, basic statistics are calculated:
  <li><strong>STAT_category_achieved:</strong> the number of categories successfully completed (0-6)</li>
  <li><strong>STAT_p_of_conceptual_level_responses:</strong> the percentage of conceptual level responses (% of the total number of trials)</li>
  <li><strong>STAT_failure_to_maintain_set:</strong> the number of times five or more consecutive correct responses occur without completing the category (do not reach 10 consecutibe correct)</li>
- <li><strong>STAT_trials_to_complete_first_category:</strong> the number of trials needed to achieve the first 10 consecutive correct responses/li>
+ <li><strong>STAT_trials_to_complete_first_category:</strong> the number of trials needed to achieve the first 10 consecutive correct responses</li>
 </ul>
 
 <h1>Setting options</h1>
