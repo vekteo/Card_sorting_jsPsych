@@ -1,6 +1,6 @@
 # WCST_JSPsych
 
-A card sorting task created with the JSPsych library<a href="https://link.springer.com/article/10.3758/s13428-014-0458-y">de Leeuw, J. R., 2015</a>, based on the Berg's Card Sorting Task <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0063885">(Fox et al., 2013)</a>.
+A card sorting task created with the JSPsych library (<a href="https://link.springer.com/article/10.3758/s13428-014-0458-y">de Leeuw, J. R., 2015</a>), based on the Berg's Card Sorting Task <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0063885">(Fox et al., 2013)</a>.
 
 <h1>Structure of the task</h1>
 <p>In the task, four cards appear on the screen. Each card has a different color, number, and shape property. From left to right, the card properties are the following: 1 red triangle, 2 green stars, 3 yellow diamonds, and 4 blue circles.</p>
