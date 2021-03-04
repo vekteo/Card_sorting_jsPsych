@@ -21,6 +21,10 @@ A card sorting task created with the JSPsych library<a href="https://link.spring
  <li><strong>trial_index:</strong> the number of the given trials (all events considered, even instructions, feedbacks!)</li>
  <li><strong>time_elapsed:</strong> the time elapsed from the start of the program in ms</li>
  <li><strong>internal_code_id:</strong> internal node id of the trial</li>
+ <li><strong>subject:</strong> random subject id (15 character long)</li>
+ <li><strong>view_history:</strong> browser events during the task (fullscreenenter, fullscreenexit, blur, or focus)</li>
+ <li><strong>rt:</strong> the reaction time of the sort</li>
+ <li><strong>test_part:</strong> part of the task (instruction, card, feedback, end)</li>
  <li><strong>stimulus:</strong> stimulus on the screen in HTML</li>
  <li><strong>button_press:</strong> the number of the card clicked (0-3; or null for feedback trials)</li>
  <li><strong>is_trial:</strong> whether the given trial is a sorting trial (sorting: true; feedback: false)</li>
