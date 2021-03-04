@@ -233,6 +233,12 @@ on_data_update: function () {
             counter++;
             actualRule = rules[counter];
         }
+
+        let interactionData = jsPsych.data.getInteractionData()
+        const interactionDataOfLastTrial = interactionData.filter({'trial': jsPsych.data.get().last(1).values()[0].trial_index}).values();
+        if (interactionDataOfLastTrial) {
+            jsPsych.data.get().last(1).values()[0].browser_events = JSON.stringify(interactionDataOfLastTrial)
+        }
     },
            
     on_finish: function() {       
