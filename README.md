@@ -68,7 +68,7 @@ In the columns start with STAT, basic statistics are calculated:
 </ul>
 
 <h1>Setting options</h1>
-The language of the task can be set in the parameters.js file by modifying the variable "language".<br>Available languages: english (en), hungarian (hu)
+The language of the task can be set in the parameters.js file by modifying the variable "language".<br>Available languages: english (en), hungarian (hu), french (fr), portuguese (pt)
 
 <h1>Browser requirements</h1>
 Any browser except Safari and Internet Explorer.
