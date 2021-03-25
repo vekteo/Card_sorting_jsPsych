@@ -166,7 +166,7 @@ jsPsych.init({
 timeline: timeline,
 preload_images: preloadImages(),
 on_close: function() {
-    jsPsych.data.get().localSave('csv','WCST_output_quitted.csv'); 
+    jsPsych.data.get().localSave('csv',`WCST_subject_${subjectId}_quitted_output.csv`); 
 },
 on_data_update: function () {
 
@@ -242,6 +242,6 @@ on_data_update: function () {
     },
            
     on_finish: function() {       
-        jsPsych.data.get().localSave('csv','WCST_output.csv'); 
+        jsPsych.data.get().localSave('csv',`WCST_subject_${subjectId}_output.csv`); 
     },
 });
