@@ -20,7 +20,7 @@ const en = {
     },
     end:  {
         end: "End of the task.",
-        thankYou: "Thank you for participating!",
+        thankYou: "Thank you!",
     },
     button: {
         next: "Next",
@@ -58,14 +58,14 @@ const hu = {
     },
     end:  {
         end: "Vége a feladatnak.",
-        thankYou: "Köszönjük a részvételt!",
+        thankYou: "Köszönjük!",
     },
     button: {
         next: "Tovább",
         previous: "Vissza"
     },
     fullscreen: {
-        fullscreenText: "A feladat teljes képernyőre ugrik, amint megnyomod a Tovább gombot.",
+        fullscreenText: "A feladat teljes képernyőre ugrik, amint a Tovább gombra kattintasz.",
         fullscreenButton: "Tovább"
     },
     feedback: {
@@ -96,7 +96,7 @@ const es = {
     },
     end:  {
         end: "Fin de la tarea.",
-        thankYou: "Gracias por haber participado!",
+        thankYou: "Gracias!",
     },
     button: {
         next: "Siguiente",
@@ -134,7 +134,7 @@ const fr = {
     },
     end:  {
         end: "Fin de la tâche.",
-        thankYou: "Merci de votre participation!",
+        thankYou: "Merci!",
     },
     button: {
         next: "Suivant",
@@ -172,7 +172,7 @@ const pt = {
     },
     end:  {
         end: "Fim da tarefa.",
-        thankYou: "Muito obrigado por participar!",
+        thankYou: "Muito obrigado!",
     },
     button: {
         next: "Próximo",
