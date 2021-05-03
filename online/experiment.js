@@ -25,8 +25,8 @@ const instructions = {
     type: "instructions",
     pages: [
         `<h1>${language.welcomePage.welcome}</h1><br><p>${language.welcomePage.clickNext}</p>`,
-        `<p>${language.instruction.fourCards}</p><p>${language.instruction.newCard}</p><p>${language.instruction.clickCard}</p><br><img src="static/images/instruction.png" style="width: 500px"/></p><p style="color: #f6f6f8">Placeholder</p>`,
-        `<p>${language.instruction.rule}</p><p>${language.instruction2.ruleChange}</p><p>${language.instruction2.ruleChange2}</p><br><img src="static/images/instruction.png" style="width: 500px"/><p>${language.instruction2.clickNext}</p>`,
+        `<p>${language.instruction.fourCards}</p><p>${language.instruction.newCard}</p><p>${language.instruction.clickCard}</p><br><img src="../static/images/instruction.png" style="width: 500px"/></p><p style="color: #f6f6f8">Placeholder</p>`,
+        `<p>${language.instruction.rule}</p><p>${language.instruction2.ruleChange}</p><p>${language.instruction2.ruleChange2}</p><br><img src="../static/images/instruction.png" style="width: 500px"/><p>${language.instruction2.clickNext}</p>`,
     ],
     show_clickable_nav: true,
     data: {test_part: "instruction"},
@@ -58,7 +58,7 @@ function addTrials (targetCard) {
     return trial = {
         type: 'html-button-response',
         stimulus: `<h3>${language.task.instruction}</h3>`,
-        choices: ["static/images/triangle_red_1.png", "static/images/star_green_2.png", "static/images/diamond_yellow_3.png", "static/images/circle_blue_4.png"],
+        choices: ["../static/images/triangle_red_1.png", "../static/images/star_green_2.png", "../static/images/diamond_yellow_3.png", "../static/images/circle_blue_4.png"],
         prompt: "<img class='choice' src='" + `${targetCard.image}` + "' />",
         button_html: '<img class="topCards" src="%choice%" />',
         data: {test_part: "card", is_trial: true, card_number: targetCard.trialNumber, correct: "", image: targetCard.image, color: targetCard.color, shape: targetCard.shape, number: targetCard.number, color_rule: targetCard.colorRule, shape_rule: targetCard.shapeRule, number_rule: targetCard.numberRule, correct_in_row: 0}, applied_rule: "", applied_rule2: "", applied_rule3: "",
@@ -119,7 +119,7 @@ function addFeedback () {
     return feedback = {
         type: 'html-button-response',
         stimulus: `<h3>${language.task.instruction}</h3>`,
-        choices: ["static/images/triangle_red_1.png", "static/images/star_green_2.png", "static/images/diamond_yellow_3.png", "static/images/circle_blue_4.png"],
+        choices: ["../static/images/triangle_red_1.png", "../static/images/star_green_2.png", "../static/images/diamond_yellow_3.png", "../static/images/circle_blue_4.png"],
         button_html: '<img class="topCards" src="%choice%" />',
         stimulus_duration: 750,
         trial_duration: 750,

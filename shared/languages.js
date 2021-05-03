@@ -33,7 +33,17 @@ const en = {
     feedback: {
         correct: "Correct!",
         wrong: "Wrong!"
-    }
+    },
+    parameters: {
+        subject: "Subject Number:",
+        session: "Session Number:"
+    },
+    startWarning: {
+        startSubject: "You are about to start the task with<strong> Subject Number ",
+        startSession: "</strong> and <strong>Session Number ",
+        startButton: "Start the task!",
+        goBackButton: "Change the parameters"
+    },
 }
 
 const hu = {
@@ -71,7 +81,17 @@ const hu = {
     feedback: {
         correct: "Helyes!",
         wrong: "Helytelen!"
-    }
+    },
+    parameters: {
+        subject: "Vizsgálati személy száma: ",
+        session: "Ülés száma: "
+    },
+    startWarning: {
+        startSubject: "Feladat kezdése <strong> ezzel a vizsgálati személy számmal: ",
+        startSession: "</strong> és <strong>ezzel az ülésszámmal: ",
+        startButton: "Feladat kezdése",
+        goBackButton: "Paraméterek változtatása"
+    },
 }
 
 const es = {
@@ -109,7 +129,17 @@ const es = {
     feedback: {
         correct: "Correcto!",
         wrong: "Incorrecto!"
-    }
+    },
+    parameters: {
+        subject: "Número de asunto: ",
+        session: "Número de sesión: "
+    },
+    startWarning: {
+        startSubject: "Está a punto de iniciar la tarea con <strong>Número de Asunto ",
+        startSession: "</strong> y <strong>Número de Sesión ",
+        startButton: "¡Inicia la tarea!",
+        goBackButton: "Cambiar los parámetros"
+    },
 }
 
 const fr = {
@@ -147,7 +177,17 @@ const fr = {
     feedback: {
         correct: "Correct!",
         wrong: "Faux!"
-    }
+    },
+    parameters: {
+        subject: "Numéro du sujet : ",
+        session: "Numéro de session : "
+    },
+    startWarning: {
+        startSubject: "Vous êtes sur le point de commencer la tâche avec <strong>Numéro de sujet ",
+        startSession: "</strong> et <strong>Numéro de session ",
+        startButton: "Commencez la tâche !",
+        goBackButton: "Modifier les paramètres"
+    },
 }
 
 const pt = {
@@ -185,5 +225,15 @@ const pt = {
     feedback: {
         correct: "Correto!",
         wrong: "Errado!"
-    }
+    },
+    parameters: {
+        subject: "Assunto número: ",
+        session: "Número da sessão: "
+    },
+    startWarning: {
+        startSubject: "Você está prestes a iniciar a tarefa com<strong> Número do assuntot ",
+        startSession: "</strong> e <strong>Sessão número ",
+        startButton: "Comece a tarefa!",
+        goBackButton: "Alterar os parâmetros"
+    },
 }
