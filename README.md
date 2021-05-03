@@ -21,7 +21,7 @@ A card sorting task created with the JSPsych library (<a href="https://link.spri
  <li><strong>trial_index:</strong> the number of the given trials (all events considered, even instructions, feedbacks!)</li>
  <li><strong>time_elapsed:</strong> the time elapsed from the start of the program in ms</li>
  <li><strong>internal_code_id:</strong> internal node id of the trial</li>
- <li><strong>subject:</strong> A 15-character long random subject ID for offline version, and customized subject number for offline version</li>
+ <li><strong>subject:</strong> A 15-character long random subject ID for the online version, and customized subject number for the offline version</li>
  <li><strong>session:</strong> customized session number (for offline version only)</li>
  <li><strong>rt:</strong> the reaction time of the sort</li>
  <li><strong>test_part:</strong> part of the task (instruction, card, feedback, end)</li>
