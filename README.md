@@ -1,5 +1,7 @@
 # WCST_JSPsych
 
+<i>Created by the MEMO Team of Lyon Neuroscience Research Center (CRNL) (PI: Dezso Nemeth)</i>
+
 A card sorting task created with the JSPsych library (<a href="https://link.springer.com/article/10.3758/s13428-014-0458-y">de Leeuw, J. R., 2015</a>), based on the Berg's Card Sorting Task (<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0063885">Fox et al., 2013</a>).
 
 <h2>Structure of the task</h2>
