@@ -45,7 +45,6 @@ A card sorting task created with the jsPsych library (<a href="https://link.spri
  <li><strong>category_completed:</strong> the number of the completed categories (0-6)</li>
  <li><strong>perseverative_error:</strong> whether the answer was a perseverative error, i.e., where the user used the same rule as for the previous choice (yes: 1, no: 0)</li>
  <li><strong>non_perseverative_error:</strong> incorrect responses which are not perseverative (yes: 1, no: 0)</li>
- <li><strong>non_perseverative_error:</strong> incorrect responses which are not perseverative (yes: 1, no: 0)</li>
  <li><strong>total_errors:</strong> the cumulative number of errors (1-64)</li>
  <li><strong>failure_to_maintain:</strong> whether the incorrect response occured after at least 5 consecutive correct answers, but before the category is completed (the errors at category changes are not counted) (yes: 1, no: 0)</li>
  <li><strong>applied_rule:</strong> the rule the user used (C - color, S - shape, N - number) - multiple letters when multiple applied rules are possible</li>
