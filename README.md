@@ -1,4 +1,4 @@
-# WCST_JSPsych
+# Card_sorting_JSPsych
 
 <i>Created by the MEMO Team of Lyon Neuroscience Research Center (CRNL) (PI: Dezso Nemeth)</i>
 
