@@ -9,7 +9,7 @@ A card sorting task created with the jsPsych library (<a href="https://link.spri
 <p>Below the four cards, a fifth one appears on the screen. The task is to classify the fifth card to one of the upper cards. The sorting can be done based on the color, number, or shape property. The user can classify the new card by cliking on one of the four cards.</p>
 <p>The correct answer depends on a rule (color, number, or shape). The rule is not known by the user. However, a feedback is given to the user after each click (Correct or Wrong).</p>
 
-<img src="static/images/instruction.png" width="500px" align="middle" /><figcaption><i>The WCST task. The user has to sort the fifth card (below).</i></figcaption>
+<img src="static/images/instruction.png" width="500px" align="middle" /><figcaption><i>The card sorting task. The user has to sort the fifth card (below).</i></figcaption>
 
 <p>64 new cards as presented to the user. The rule changes after 10 consecutive correct answers. The order of the rules are: color, shape, number, color, shape, number.</p>
 
