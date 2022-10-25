@@ -4,7 +4,7 @@ authors:
   - family-names: Vékony
     given-names: Teodóra
     orcid: https://orcid.org/0000-0002-8620-5685
-title: "Card Sorting Task"
+title: "Card Sorting Task created with jsPsych"
 version: 1.0.1
 doi: 10.5281/zenodo.7093470
 date-released: 2022-09-19
